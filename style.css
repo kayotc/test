@@ -871,94 +871,73 @@ footer {
         left: 200%;
     }
 
-    .container .cardsOne {
-
-        h2,
-        h3 {
-            margin-left: 0;
-        }
-
-        p,
-        li {
-            font-size: 1rem;
-            margin-left: 0;
-        }
-
-        ul {
-            margin-left: 5%;
-        }
-
-        .cardOne {
-            .FirstRight {
-                height: 40%;
-                top: 30%;
-            }
-
-            .cardOneContent {
-                margin-left: -5%;
-            }
-        }
-
-        .cardTwo {
-            .cardTwoContent {
-                width: 100%;
-            }
-
-            .SecondBottom {
-                left: 43%;
-                bottom: -15%;
-                height: 30%;
-            }
-        }
+    
+    .container {
+      height: auto; /* evita problemas com 110vh no iOS */
+      overflow-y: auto; /* permite rolagem fluida */
+      -webkit-overflow-scrolling: touch;
     }
 
+    .container .cardsOne,
     .container .cardsTwo {
-
-        p,
-        li {
-            font-size: 1rem;
-            margin-left: 0;
-        }
-
-        h3,
-        h2 {
-            margin-left: 0;
-        }
-
-        ul {
-            margin-left: 5%;
-        }
-
-        .cardTree {
-            .ThirdLeft {
-                height: 40%;
-                top: 30%;
-            }
-
-            .cardTreeContent {
-                margin-left: 15%;
-
-                .photo {
-                    display: none;
-                }
-
-            }
-        }
-
-        .cardFour {
-            .FourthTop {
-                top: -15%;
-                height: 30%;
-                left: 43%;
-            }
-
-            .cardFourContent {
-                width: 100%;
-            }
-        }
-
-
+      flex-direction: column;
+      gap: 20px;
+      padding: 10px;
+      overflow: visible; /* evita cortes inesperados */
     }
+
+    .container .cardOne,
+    .container .cardTwo,
+    .container .cardTree,
+    .container .cardFour {
+      min-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .cardOneContent,
+    .cardTwoContent,
+    .cardTreeContent,
+    .cardFourContent {
+      width: 100%;
+      height: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Ajustes nos botões de navegação */
+    .FirstRight,
+    .SecondBottom,
+    .ThirdLeft,
+    .FourthTop {
+      padding: 15px;
+      background-size: 70%;
+    }
+
+    .cardOne .FirstRight {
+      top: 40%;
+    }
+
+    .cardTwo .SecondBottom {
+      bottom: -20%;
+    }
+
+    .cardTree .ThirdLeft {
+      top: 40%;
+    }
+
+    .cardFour .FourthTop {
+      top: -20%;
+    }
+
+    /* Evita saltos com transformações */
+    .hide,
+    .back,
+    .bottom,
+    .top {
+      transform: none !important;
+    }
+  
 
     .xp {
         h2 {
@@ -1019,3 +998,4 @@ footer {
         }
     }
 }
+
